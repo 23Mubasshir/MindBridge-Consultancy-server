@@ -23,7 +23,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     const servicesCardCollection = client
       .db("MindBridge-Consultancy")
@@ -49,7 +49,7 @@ async function run() {
     // Bookings services
     app.post("/bookings", async (req, res) => {
       const bookings = req.body;
-      console.log(bookings);
+      // console.log(bookings);
 
       const result = await bookingsCollection.insertOne(bookings);
       res.send(result);
